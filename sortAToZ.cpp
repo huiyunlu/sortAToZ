@@ -18,6 +18,9 @@ bool isGreater (pchar w1, pchar w2){
     bool result = false;
 
     for (; *w1!='\0' || *w2!='\0'; w1++, w2++){
+        if (*w1 >= 'A' && *w1 <= 'Z') *w1 += ' ';
+        if (*w2 >= 'A' && *w2 <= 'Z') *w2 += ' ';
+
         if (*w1 != *w2) {
             if (*w1 > *w2) result = true;
             break;
